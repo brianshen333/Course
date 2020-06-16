@@ -8,11 +8,13 @@
     <title>Ristorante Con Fusion</title>
     
     <!-- Bootstrap -->
+    <!-- build:css css/main.css-->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/bootstrap-social.css" rel="stylesheet">
     <link href="css/mystyles.css" rel="stylesheet">
+    <!-- endbuild -->
 
 </head>
 
@@ -51,8 +53,8 @@
                 <!-- Trial form from here -->
                 <div id="navbarForm" class="navbar-right">
                     <ul class="nav navbar-nav navbar-right">
-                    <li><a data-toggle="modal" data-target="#loginModal">
-                    <span class="glyphicon glyphicon-log-in"></span> Login</a>
+                    <li>
+                    <button id="myModalButton"class="glyphicon glyphicon-log-in">Login</button> 
                     </li>
                 </ul>
                 </div>
@@ -113,7 +115,7 @@
                 </div>
                 <div class="col-xs-12 col-sm-2">
                     <p style="padding:40px;"></p>
-                    <a class="btn btn-warning btn-block" data-target="#ReserveModal" role="button" data-toggle="modal">Reserve Table</a>
+                    <a id="ReserveButton"class="btn btn-warning btn-block" data-target="" role="button" data-toggle="modal">Reserve Table</a>
 
                 </div>
             </div>
@@ -402,23 +404,7 @@
     //     $('[data-toggle="tooltip"]').tooltip();
     //      });
     // </script>
-    <script>
-        $(document).ready(function() {
-            $("#mycarousel").carousel({ interval: 2000});
-            $("#carouselButton").click(function() {
-                if ($("#carouselButton").children("span").hasClass('fa-pause')) {
-                    $("#mycarousel").carousel('pause');
-                    $("#carouselButton").children("span").removeClass('fa-pause');
-                    $("#carouselButton").children("span").addClass('fa-play');
-                }
-                else if ($('#carouselButton').children("span").hasClass('fa-play')) {
-                    $("#mycarousel").carousel("cycle");
-                    $("#carouselButton").children("span").removeClass('fa-play');
-                    $("#carouselButton").children("span").addClass('fa-pause');
-                }
-            });
-        });
-    </script>
+    <script src="js/scripts.js"></script>
 
 </body>
 

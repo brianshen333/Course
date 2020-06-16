@@ -4,9 +4,15 @@
   "description": "This is a test directory to learn Git and Node",
   "main": "index.html",
   "scripts": {
-    "start": "npm run lite",
+    "start": "npm run watch:all",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lite": "lite-server"
+    "lite": "lite-server",
+    "scss": "node-sass -o css/ css/",
+    "watch:scss": "onchange 'css/*.scss' -- npm run scss",
+    "watch:all": "parallelshell 'npm run watch:scss' 'npm run lite'",
+    "clean": "rimraf dist",
+    "copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",
+    "imagemin": "imagemin img/* -o dist/img"
   },
   "repository": {
     "type": "git",
@@ -19,12 +25,18 @@
   },
   "homepage": "https://github.com/brianshen333/WebCourse#readme",
   "devDependencies": {
-    "lite-server": "^2.5.4"
+    "lite-server": "^2.5.4",
+    "node-sass": "^4.7.2",
+    "onchange": "^3.3.0",
+    "parallelshell": "^3.0.1"
   },
   "dependencies": {
     "bootstrap": "^4.4.1",
+    "cssmin": "^0.4.3",
+    "htmlmin": "0.0.7",
     "jquery": "^3.3.1",
     "popper.js": "^1.12.9",
+    "uglifyjs": "^2.4.11",
     "vim": "^0.1.0"
   }
 }
