@@ -34,7 +34,7 @@
     "bootstrap": "^4.4.1",
     "cssmin": "^0.4.3",
     "htmlmin": "0.0.7",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "popper.js": "^1.12.9",
     "uglifyjs": "^2.4.11",
     "vim": "^0.1.0"
